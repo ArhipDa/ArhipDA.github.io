@@ -11,16 +11,25 @@
             box-sizing: border-box;
         }
 
+        /* ГЛАВНОЕ ИЗМЕНЕНИЕ ДЛЯ IFrame */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
         body {
             font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
             background: radial-gradient(circle at 20% 30%, #0a0f1c, #05080f);
-            min-height: 100vh;
-            padding: 40px;
+            padding: 20px;
+            overflow-y: auto;  /* Прокручивается содержимое, но не сам iframe */
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
+            min-height: 100%;
         }
 
         /* Заголовок и легенда */
@@ -359,6 +368,7 @@
             animation: pulseOnce 0.4s ease-out forwards;
         }
         @media (max-width: 1000px) {
+            body { padding: 10px; }
             .service-card { min-width: 180px; padding: 14px 20px; }
             .service-name { font-size: 13px; }
         }
